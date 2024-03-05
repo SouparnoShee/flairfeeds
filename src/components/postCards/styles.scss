@@ -1,0 +1,123 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.postcards {
+  min-height: 480px;
+  background-color: $secondary-bg;
+  width: 340px;
+  position: relative;
+  padding-bottom: 10px;
+  .img {
+    width: 100%;
+    height: 230px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .user-info {
+    @include SetFlex(space-between, row);
+    padding: 0px 15px;
+    margin: 15px 0px;
+    .name-dates {
+      font-size: 15px;
+      @media (max-width: 400px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  h2 {
+    padding: 0px 15px;
+    margin: 15px 0px;
+    font-size: 22px;
+  }
+  p {
+    padding: 0px 15px;
+    margin: 15px 0px;
+    font-size: 14px;
+  }
+  .likes-view {
+    @include SetFlex(space-between, row);
+    padding: 0px 15px;
+    margin-top: 15px;
+    .like-comment {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      .likes {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .like,
+      .comment {
+        font-size: 28px;
+        color: $primary-bg;
+      }
+    }
+    .view-post {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+  }
+
+  .comments {
+    padding: 0px 15px;
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: $primary-bg;
+    width: 290px;
+    .cross {
+      text-align: end;
+      padding-top: 8px;
+    }
+    .comment-input {
+      width: 250px;
+      position: relative;
+      margin: 15px 0px;
+      input {
+        width: 100%;
+        padding: 10px 10px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+      }
+      .send {
+        position: absolute;
+        right: -15px;
+        top: 7px;
+        color: #000;
+        font-size: 25px;
+      }
+    }
+    .all-comments {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 12px;
+      .comment {
+        background: $third-bg;
+        padding: 8px 12px;
+        border-radius: 8px;
+        .comment-user {
+          font-size: 14px;
+          color: #b9b9b9;
+        }
+        .c-text {
+          margin-top: 6px;
+          @include SetFlex(space-between, row);
+          span {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.child {
+  padding: 40px 60px;
+  background: #070f2b;
+  @media (max-width: 450px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

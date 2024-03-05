@@ -1,0 +1,145 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.post-details {
+  min-height: 90vh;
+  @include SetFlex(center, column);
+  .post {
+    min-height: 85vh;
+    width: 90%;
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+    background: $secondary-bg;
+    .img {
+      width: 100%;
+      height: 600px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .user-info {
+      padding: 35px 30px;
+      @media (max-width: 650px) {
+        padding: 35px 15px;
+      }
+      @include SetFlex(space-between, row);
+      span {
+        color: #fff;
+        font-size: 25px;
+        @media (max-width: 650px) {
+          font-size: 15px;
+        }
+        font-weight: 800;
+      }
+    }
+    .title {
+      padding: 25px 30px;
+      color: #fff;
+    }
+    .desc {
+      padding: 15px 30px;
+      color: #fff;
+      font-size: 20px;
+      line-height: 30px;
+      @media (max-width: 650px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    .likes {
+      margin: 0px 30px;
+      @include SetFlex(start, row);
+      gap: 34px;
+      .like {
+        font-size: 70px;
+        color: $third-bg;
+        @media (max-width: 650px) {
+          font-size: 34px;
+        }
+      }
+      .like-num {
+        font-size: 40px;
+        color: #fff;
+        @media (max-width: 650px) {
+          font-size: 24px;
+        }
+      }
+    }
+    .comments {
+      padding: 35px 30px;
+      width: 100%;
+      @media (max-width: 450px) {
+        padding: 35px 5px;
+      }
+      .comment-input {
+        @include SetFlex(start, row);
+        position: relative;
+        input {
+          width: 80%;
+          @media (max-width: 650px) {
+            width: 50%;
+          }
+          @media (max-width: 330px) {
+            width: 40%;
+          }
+          font-size: 16px;
+          padding: 18px 30px;
+          outline: none;
+          border: none;
+        }
+        .send {
+          font-size: 40px;
+          position: absolute;
+          right: 16%;
+        }
+      }
+      .all-comments {
+        margin: 20px 0px;
+        background-color: $third-bg;
+        padding: 12px 20px;
+        width: 80%;
+        border-radius: 12px;
+        .comment {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          gap: 12px;
+          .comment-user {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 800;
+          }
+          .c-text {
+            color: #fff;
+            font-size: 16px;
+            display: flex;
+            text-align: center;
+            @include SetFlex(space-between, row);
+          }
+        }
+      }
+    }
+  }
+  .edit-delete {
+    margin-top: 20px;
+    width: 80%;
+    @include SetFlex(space-between, row);
+    @media (max-width: 650px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+    button {
+      padding: 10px 30px;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background-color: $fourth-bg;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+}

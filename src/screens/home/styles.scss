@@ -1,0 +1,154 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.home {
+  min-height: 100vh;
+  background: $primary-bg;
+  color: #fff;
+  display: flex;
+
+  @media (max-width: 860px) {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .no-results {
+    height: 30vh;
+    width: 70%;
+    @include SetFlex(center, row);
+  }
+
+  .left {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    @media (max-width: 860px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  .right {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    @media (max-width: 860px) {
+      width: 100%;
+      justify-content: center;
+    }
+    // position: sticky;
+    // top: 10%;
+    .profile {
+      min-height: 450px;
+      width: 320px;
+      background-color: $third-bg;
+      position: relative;
+      @media (max-width: 490px) {
+        width: 100%;
+        justify-content: center;
+      }
+      .profile-pic {
+        height: 180px;
+        @include SetFlex(center, row);
+        div {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+      .user-info {
+        @include SetFlex(center, column);
+        gap: 20px;
+        margin: 20px 0px;
+        span {
+          &:nth-child(1) {
+            font-size: 22px;
+            font-weight: 800;
+          }
+        }
+      }
+      .view-profile {
+        margin-top: 38px;
+        text-align: center;
+        .link {
+          color: #fff;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      }
+      .button {
+        text-align: center;
+        margin-top: 40px;
+        button {
+          border: none;
+          outline: none;
+          padding: 8px 25px;
+          font-size: 16px;
+          color: #fff;
+          background: $secondary-bg;
+          border-radius: 18px;
+        }
+      }
+      .create-post {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: $secondary-bg;
+        height: 35px;
+        @include SetFlex(center, row);
+        span {
+          color: #fff;
+        }
+      }
+    }
+    .nostatus {
+      margin-top: 40px;
+    }
+    .status {
+      margin: 50px 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .post-status {
+        @include SetFlex(start, column);
+        gap: 20px;
+        input {
+          outline: none;
+          border: none;
+          padding: 20px 20px;
+          width: 200px;
+          border-radius: 12px;
+        }
+        button {
+          padding: 10px 22px;
+          border: none;
+          outline: none;
+          background: $secondary-bg;
+          color: #fff;
+        }
+      }
+    }
+    .all-status {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      @media (max-width: 860px) {
+        flex-direction: row;
+        gap: 20px;
+        width: 98%;
+        overflow-x: scroll;
+      }
+    }
+  }
+}

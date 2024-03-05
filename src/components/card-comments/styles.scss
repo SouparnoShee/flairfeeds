@@ -1,0 +1,25 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.all-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  .comment {
+    background: $third-bg;
+    padding: 8px 12px;
+    border-radius: 8px;
+    .comment-user {
+      font-size: 14px;
+      color: #b9b9b9;
+    }
+    .c-text {
+      margin-top: 6px;
+      @include SetFlex(space-between, row);
+      span {
+        font-size: 15px;
+      }
+    }
+  }
+}

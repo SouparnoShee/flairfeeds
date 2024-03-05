@@ -1,0 +1,68 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.status-box {
+  background-color: $third-bg;
+  border-radius: 12px;
+  padding: 30px 30px;
+  width: 90%;
+  display: flex;
+  margin: 20px 0px;
+  gap: 20px;
+  flex-direction: column;
+  div {
+    @include SetFlex(space-between, row);
+    gap: 20px;
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .name-date {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  span {
+    padding: 10px 10px;
+    background-color: $fourth-bg;
+    border-radius: 20px;
+  }
+}
+
+.self-status-box {
+  background-color: $fourth-bg;
+  border-radius: 12px;
+  padding: 30px 30px;
+  margin: 20px 0px;
+  width: 90%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  position: relative;
+
+  div {
+    @include SetFlex(space-between, row);
+    gap: 20px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    div {
+      .cross {
+        text-align: cent;
+      }
+    }
+  }
+  span {
+    padding: 10px 10px;
+    background-color: $third-bg;
+    border-radius: 20px;
+    line-height: 20px;
+  }
+}

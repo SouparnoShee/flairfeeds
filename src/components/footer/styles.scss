@@ -1,0 +1,30 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.footer {
+  height: 70px;
+  padding: 8px 30px;
+  @include SetFlex(space-between, row);
+  background: $primary-bg;
+  color: #fff;
+  @media (max-width: 590px) {
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    height: auto;
+    text-align: center;
+  }
+
+  .profile-sec {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .profile {
+      text-decoration: none;
+      color: #fff;
+    }
+    .logout {
+      cursor: pointer;
+    }
+  }
+}

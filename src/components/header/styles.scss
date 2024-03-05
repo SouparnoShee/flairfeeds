@@ -1,0 +1,60 @@
+@import "../../styles/var";
+@import "../../styles/mixins";
+
+.header {
+  height: 90px;
+  background: $primary-bg;
+  @include SetFlex(space-between, row);
+  padding: 0px 50px;
+  color: #fff;
+  position: relative;
+
+  .logo {
+    height: 55px;
+    @media (max-width: 920px) {
+      height: 40px;
+    }
+  }
+  .search {
+    @include SetFlex(center, row);
+    position: relative;
+    input {
+      padding: 10px 20px;
+      width: 240px;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      @media (max-width: 920px) {
+        display: none;
+      }
+    }
+    .search-icon {
+      position: absolute;
+      right: 6%;
+      color: #000;
+      font-size: 18px;
+    }
+  }
+
+  .bar {
+    font-size: 30px;
+    display: none;
+    @media (max-width: 920px) {
+      display: flex;
+    }
+  }
+
+  .links {
+    @include SetFlex(center, row);
+    gap: 40px;
+    @media (max-width: 920px) {
+      display: none;
+    }
+    .navlinks {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 19px;
+    }
+  }
+}
